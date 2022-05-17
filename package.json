@@ -1,0 +1,42 @@
+{
+  "name": "amo-vscode",
+	"displayName": "VSCode Plugin for AMO",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.64.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+        "onCommand:amo-vscode.get",
+        "onStartupFinished"
+	],
+	"main": "./extension.js",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
+	"contributes": {
+		"commands": [{
+            "command": "amo-vscode.get",
+            "title": "AMO Download"
+
+		}],
+    "views": {
+      "explorer": [{
+        "id": "amo",
+        "name": "AMO Versions"
+      }]
+    }
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint"
+	},
+	"devDependencies": {
+    "eslint": "^8.6.0"
+  }
+}
